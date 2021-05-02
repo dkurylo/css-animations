@@ -1,0 +1,93 @@
+<html>
+	<body style="background: #000;">
+		<style>
+			div.pacman {
+				width: 300px;
+				height: 100px;
+				position: absolute;
+				overflow: hidden;
+			}
+			div.pacman > div:first-child {
+				width: 33.3333333%;
+				height: 100%;
+				position: absolute;
+				animation-iteration-count: infinite;
+				animation-duration: 0.5s;
+				border-radius: 50%;
+				background: yellow;
+				background-image: linear-gradient(to right, transparent 50%, #000 0);
+				transform: rotateZ(.125turn);
+				animation-name: pactop;
+			}
+			div.pacman > div:first-child::before {
+			  content: '';
+			  display: block;
+			  margin-left: 50%;
+			  height: 100%;
+			  border-radius: 0 100% 100% 0 / 50%;
+			  background-color: inherit;
+			  transform-origin: left;
+			  transform: rotateZ(0.25turn);
+			  animation-iteration-count: infinite;
+			  animation-duration: 0.5s;
+			  animation-name: pacbot;
+			}
+			div.pacman > div:first-child::after {
+				content: '';
+				width: 20%;
+				display: block;
+				height: 20%;
+				border-radius: 50%;
+				background: #000;
+				top: -65%;
+				left: 11%;
+				position: relative;
+			}
+			div.pacman > div:last-child {
+			    animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			    animation-duration: 0.5s;
+				animation-name: food;
+				position: absolute;
+				left: -3%;
+				width: 100%;
+				height: 100%;
+			}
+			div.pacman > div:last-child::before {
+				content: '';
+				width: 6.6666667%;
+				display: block;
+				height: 20%;
+				border-radius: 50%;
+				background: yellow;
+				top: 40%;
+				left: 40%;
+				position: absolute;
+			}
+			div.pacman > div:last-child::after {
+				content: '';
+				width: 6.6666667%;
+				display: block;
+				height: 20%;
+				border-radius: 50%;
+				background: yellow;
+				top: 40%;
+				left: 100%;
+				position: absolute;
+			}
+			@keyframes pactop {
+				00.0% { transform: rotateZ(0.125turn); }
+				50.0% { transform: rotateZ(0.25turn); }
+			}
+			@keyframes pacbot {
+				00.0% { transform: rotateZ(0.25turn); }
+				50.0% { transform: rotateZ(0.0turn); }
+			}
+			@keyframes food {
+				00.0% { left: -3%; }
+				100.0% { left: -63%; }
+			}
+		</style>
+		<div class="pacman"><div></div><div></div></div>
+	</body>
+</html>

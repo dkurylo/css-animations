@@ -1,0 +1,91 @@
+<html>
+	<body style="background: #FFF; background-image: linear-gradient(45deg, #F6F6F6 25%, transparent 25%), linear-gradient(-45deg, #F6F6F6 25%, transparent 25%),
+  linear-gradient(45deg, transparent 75%, #F6F6F6 75%), linear-gradient(-45deg, transparent 75%, #F6F6F6 75%); background-size:20px 20px; background-position: 0 0, 0 10px, 10px -10px, -10px 0px;">
+		<style>
+			div.animated {
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				transform: rotate(45deg);
+				margin: 5px;
+				background-color: #FFF;
+				background: rgba(255, 255, 255, 0.8);
+				border: 5px solid rgba(255, 255, 255, 0.0);
+				border-radius: 6%;
+			}
+			div.animated > div > div {
+				width: 50%;
+				height: 50%;
+				position: absolute;
+				background-color: #BBB;
+				margin: 1px;
+				animation-iteration-count: infinite;
+				animation-duration: 4s;
+			}
+			div.animated > div:first-child > div:first-child {
+				bottom: 50%;
+				right: 50%;
+				border-top-left-radius: 4%;
+				animation-name: topleft;
+			}
+			div.animated > div:first-child > div:last-child {
+				bottom: 50%;
+				left: 50%;
+				border-top-right-radius: 4%;
+				animation-name: topright;
+			}
+			div.animated > div:last-child > div:first-child {
+				top: 50%;
+				right: 50%;
+				border-bottom-left-radius: 4%;
+				animation-name: botleft;
+			}
+			div.animated > div:last-child > div:last-child {
+				top: 50%;
+				left: 50%;
+				border-bottom-right-radius: 4%;
+				animation-name: botright;
+			}
+			@keyframes topleft {
+				00.0% { height:  0%; width: 50%; background-color: #FFF; }
+				12.5% { height: 50%; width: 50%; background-color: #BBB; }
+				50.0% { height: 50%; width: 50%; background-color: #BBB; }
+				62.5% { height: 50%; width:  0%; background-color: #666; }
+				75.0% { height:  0%; width:  0%; background-color: #666; }
+				87.5% { height:  0%; width: 50%; background-color: #666; }
+				100.0% { height:  0%; width: 50%; background-color: #FFF; }
+			}
+			@keyframes topright {
+				00.0% { height:  0%; width:  0%; background-color: #BBB; }
+				12.5% { height: 50%; width:  0%; background-color: #FFF; }
+				25.0% { height: 50%; width: 50%; background-color: #BBB; }
+				62.5% { height: 50%; width: 50%; background-color: #BBB; }
+				75.0% { height:  0%; width: 50%; background-color: #666; }
+				87.5% { height:  0%; width:  0%; background-color: #666; }
+				100.0% { height: 0%; width:  0%; background-color: #666; }
+			}
+			@keyframes botright {
+				00.0% { height:  0%; width:  0%; background-color: #BBB; }
+				12.5% { height:  0%; width:  0%; background-color: #666; }
+				25.0% { height:  0%; width: 50%; background-color: #FFF; }
+				37.5% { height: 50%; width: 50%; background-color: #BBB; }
+				75.0% { height: 50%; width: 50%; background-color: #BBB; }
+				87.5% { height: 50%; width:  0%; background-color: #666; }
+				100.0% { height: 0%; width:  0%; background-color: #666; }
+			}
+			@keyframes botleft {
+				00.0% { height:  0%; width:  0%; background-color: #BBB; }
+				12.5% { height:  0%; width: 50%; background-color: #666; }
+				25.0% { height:  0%; width:  0%; background-color: #666; }
+				37.5% { height: 50%; width:  0%; background-color: #FFF; }
+				50.0% { height: 50%; width: 50%; background-color: #BBB; }
+				87.5% { height: 50%; width: 50%; background-color: #BBB; }
+				100.0% { height: 0%; width: 50%; background-color: #666; }
+			}
+		</style>
+		<div class="animated">
+			<div><div></div><div></div></div>
+			<div><div></div><div></div></div>
+		</div>
+	</body>
+</html>
